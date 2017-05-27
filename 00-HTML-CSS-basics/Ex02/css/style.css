@@ -1,6 +1,7 @@
 html {
 	font-family:'Amatica SC', Times, serif;
 	font-size: 14px;
+	box-sizing: border-box;
 }
 header {
 	background-color: #f44259;
@@ -18,20 +19,63 @@ footer {
 }
 .header {
 	font-size: 46px;
+	display: block;
+	position: relative;
+	margin: auto 2%;
+	border-radius: 10px;
 }
-.footer{
-	font-size: 10px;
+.footer {
+	font-size: 25px;
+	border-radius: 10px;
+	display: block;
+	position: relative;
+	margin: 0% 2%;
+	clear: both;
 }
 .content {
-	font-size: 14px;
+	font-size: 20px;
+	background-color: #42f4c5;
+	display: inline-block;
+	position: relative;
+	max-width: 75%;
+	height: 100%;
+	border-radius: 10px;
+	margin: 0% 1%;
+	float: left;
 }
 .navigation {
-	font-size: 12px;
+	font-size: 30px;
+	display: inline-block;
+	position: relative;
+	float: left;
+	max-width: 100%;
+	height: 100%;
+	border-radius: 10px;
 }
 .sidebar {
-	font-size: 10px;
+	font-size: 25px;
+	display: inline-block;
+	position: relative;
+	height: 100%;
+	border-radius: 10px;
+	float: right;
 }
-[class$='r'] {
+.midsect {
+	display: relative;
+	margin: auto 2%;
+	height: 600px;
+}
+.content footer {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	margin: 2% auto; 
+}
+.content article {
+	padding: 1% 5%;
+}
+/* [class$='r'] {
 	background-color: magenta;
 }
 [class*='a']:not([class$='r']) {
