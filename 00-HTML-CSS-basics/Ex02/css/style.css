@@ -29,7 +29,10 @@ footer {
 	border-radius: 10px;
 	display: block;
 	position: relative;
-	margin: 0% 2%;
+	width: 96%;
+	height: auto;
+	bottom: 0;
+	margin: 1% 2%;
 	clear: both;
 }
 .content {
@@ -60,10 +63,11 @@ footer {
 	border-radius: 10px;
 	float: right;
 }
-.midsect {
+div.midsect {
 	display: relative;
 	margin: auto 2%;
 	height: 600px;
+	float: left;
 }
 .content footer {
 	display: block;
