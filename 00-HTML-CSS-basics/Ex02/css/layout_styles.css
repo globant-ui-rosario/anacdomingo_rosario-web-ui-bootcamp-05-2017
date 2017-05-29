@@ -43,3 +43,25 @@ div.inner_box:hover {
 	width: 100%;
 	height: 100%;
 }
+@media all and (max-width: 800px) {
+	div.box {
+		display: inline-block;
+		position: relative;
+		width: 70%; 
+		margin: 0% 10%;
+	}
+	h1 {
+		font-size: 20px;
+	}
+	div.inner_box {
+		font-size: 15px;
+	}
+}
+@media all and (min-width: 1280px) {
+	div.box {
+		display: inline-block;
+		position: relative;
+		width: 25%; 
+		margin: 0% 0%;
+	}
+}
