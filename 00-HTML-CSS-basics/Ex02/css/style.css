@@ -1,0 +1,42 @@
+html {
+	font-family:'Amatica SC', Times, serif;
+	font-size: 14px;
+}
+header {
+	background-color: #f44259;
+	text-align: center;
+}
+nav {
+	background-color: #8f42f4;
+}
+aside {
+	background-color: #417df4;
+}
+footer {
+	background-color: #f4a641;
+	text-align: center;
+}
+.header {
+	font-size: 46px;
+}
+.footer{
+	font-size: 10px;
+}
+.content {
+	font-size: 14px;
+}
+.navigation {
+	font-size: 12px;
+}
+.sidebar {
+	font-size: 10px;
+}
+[class$='r'] {
+	background-color: magenta;
+}
+[class*='a']:not([class$='r']) {
+	background-color: blue;
+}
+
+/* 6 - You can use the universal selector (*) or ids in the particular cases */
+/* 7 - You should use "!important" after the CSS rule. It's not considered a good practice. */
