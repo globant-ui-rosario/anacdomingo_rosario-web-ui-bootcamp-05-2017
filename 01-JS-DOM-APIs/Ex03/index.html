@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html>
-   <head>
+  <head>
 		<meta charset="UTF-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
    	<title> JS 03 </title>
    	<meta name="description" content="Let's begin with JavaScript">
    	<meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="css/styles.css">
-      <link href="https://fonts.googleapis.com/css?family=Bubbler+One" rel="stylesheet">
-   </head>
-   <body>
-   	<header>
-   		<h1>This it my third JS excercise!</h1>
-   	</header>
-   	<section id="jokeTextbox"></section> <br>
-      <button onclick="getJoke('http://api.icndb.com/jokes/random')"> I have a joke for you </button>
-      <script>
-         function getJoke(url) {
-            var joke;
-            var jokeRequest = new XMLHttpRequest();
-            jokeRequest.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-               joke=JSON.parse(this.responseText);
-               document.getElementById("jokeTextbox").innerHTML = joke.value.joke;
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Bubbler+One" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+     	<h1>This it my third JS excercise!</h1>
+    </header>
+    <section id="jokeTextbox"></section> <br>
+    <button onclick="getJoke (jconfig)"> I have a joke for you </button>
+    <script>
+      var jconfig = {
+        fmethod:'GET',
+        url:'http://api.icndb.com/jokes/random',
+        sync:true
+      }
+      function getJoke (config) {
+        let promise = new Promise (function(resolve, reject) {
+          let jokeRequest = new XMLHttpRequest();
+          jokeRequest.open(config.fmethod, config.url, config.sync);
+          jokeRequest.send();
+          jokeRequest.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+              resolve(jokeRequest);
             }
-         }
-         jokeRequest.open("GET", url, true);
-         jokeRequest.send();
-         }
-      </script>
-   </body>
+          }
+        })
+          promise.then(function resolve(req) {
+            let joke = JSON.parse(req.response);
+            document.getElementById('jokeTextbox').innerHTML = joke.value.joke;
+          })
+          promise.catch(function reject() {
+            document.getElementById('jokeTextbox').style.backgroundColor = 'red';
+          })
+      }
+    </script>
+  </body>
 </html>
