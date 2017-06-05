@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+		<meta charset="UTF-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+   	<title> JS 04 </title>
+   	<meta name="description" content="Die promises, die">
+   	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Bubbler+One" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+     	<h1>This it my fourth JS excercise!</h1>
+    </header>
+    <div class="repWrapper">
+      <h2>Repositories:</h2>
+      <ul id="repoList">
+      </ul>
+    </div>
+    <script>
+      function getRep() {
+        let repRequest = new XMLHttpRequest();
+        repRequest.open ('GET', 'https://api.github.com/search/repositories?q=JavaScript', true);
+        repRequest.send ();
+        let repPromise = new Promise (function (success, reject) {
+          repRequest.onreadystatechange = function () {
+            if (this.status === 200 && this.readyState === 4) {
+              success(repRequest);
+            } else {
+              reject();
+            }
+          }
+        });
+        repPromise.then(function success (resp) {
+          console.log(response);
+          let repResponse = JSON.parse(resp.response);
+          document.getElementById('repoList') = repResponse;
+        })
+        repPromise.catch(function reject () {
+          console.log ('Se ha encontrado un error, no pueden cargarse los repositorios');
+        })
+      }
+      window.addEventListener("load", getRep());
+    </script>
+  </body>
+</html>
