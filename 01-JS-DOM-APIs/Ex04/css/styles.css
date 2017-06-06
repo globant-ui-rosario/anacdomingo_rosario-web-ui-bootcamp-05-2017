@@ -20,3 +20,11 @@ div.repWrapper {
 	width: 50%;
 	height: 50%;
 }
+div.searchBox {
+	float: left;
+	width: 30%;
+	height: 40%;
+	padding: 3%;
+	background-color: #b08adb;
+	color: black;
+}
