@@ -1,6 +1,6 @@
 html {
 	font-family: 'Bubbler One', sans-serif;
-	background-color: black;
+	background-color: #440000;
 	color: white;
 	box-sizing: border-box;
 }
@@ -12,19 +12,19 @@ h2 {
 	text-align: center;
 }
 div.repWrapper {
-	background-color: #60d123;
+	background-color: #b52d34;
 	color: black;
 	font-size: 12px;
 	position: relative;
 	float: right;
-	width: 50%;
-	height: 50%;
+	width: 30%;
+	height: auto;
 }
 div.searchBox {
 	float: left;
 	width: 30%;
 	height: 40%;
 	padding: 3%;
-	background-color: #b08adb;
+	background-color: #b52d34;
 	color: black;
 }
