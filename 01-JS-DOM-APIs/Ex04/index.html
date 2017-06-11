@@ -23,7 +23,8 @@
       <form name="search">
         <label>Search a repository:</label>
         <input type="text" id="repoSearch">
-        <input type="submit" value="Search" onclick="qSearch()">
+        <input type="submit" value="Search" onclick="qSearch(document.getElementById('repoSearch').value)">
       </form>
+    </div>
   </body>
 </html>

@@ -4,16 +4,14 @@ function reqConfig (method, url, sync) {
   this.sync = sync;
 }
 function newQuery (text) {
-  return new reqConfig ("GET", "https://api.github.com/search/repositories?q="+text, true);
-  //return new reqConfig ("GET", "https://api.github.com/search/repositories?q=javascript", true);
+  return new reqConfig("GET", "https://api.github.com/search/repositories?q="+text, true);
 }
 function reRequest(object) {
-  let req;
   return new Promise (function(resolve, reject) {
-    req = new XMLHttpRequest();
+    let req = new XMLHttpRequest();
     req.open(object.method, object.url, object.sync);
     req.send();
-    req.onload = function () {
+    req.onreadystatechange = function () {
       if (this.status === 200 && this.readyState === 4) {
         resolve (this.response);
       } else {
@@ -22,17 +20,17 @@ function reRequest(object) {
     };
   })
 }
-function qSearch () {
-  let sQuery = newQuery (document.getElementById("repoSearch").value);
+function qSearch (sText) {
+  let sQuery = newQuery(sText);
   let list;
   let items;
   let columnNode;
   let textNode;
   reRequest(sQuery).then(function(response) {
-    list = document.getElementById("repoList");
+    list = document.getElementById('repoList');
     items = JSON.parse(response).items;
     items.map(function (item) {
-      columnNode = document.createElement("li");
+      columnNode = document.createElement('li');
       textNode = document.createTextNode(item.full_name);
       columnNode.appendChild(textNode);
       list.appendChild(columnNode);
