@@ -1,0 +1,16 @@
+html {
+	background-color: #473a3a;
+	color: white;
+	font-family: 'Francois One', sans-serif;
+	text-align: center;
+	box-sizing: border-box;
+}
+#mWrap {
+	background-color: #e56e6e;
+	color: black;
+	width: 30%;
+	position: relative;
+	left: 34%;
+	height: auto;
+	padding: 1%;
+}
