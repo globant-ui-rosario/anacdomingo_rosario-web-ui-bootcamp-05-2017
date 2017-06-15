@@ -1,0 +1,12 @@
+html {
+	text-align: center;
+	background-color: #795b82;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+h1 {
+	text-decoration-line: underline;
+}
+#textBox {
+	background-color: #e0abfc;
+	font-size: 12px;
+}
